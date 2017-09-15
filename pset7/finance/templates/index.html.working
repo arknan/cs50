@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Home Page
+{% endblock %}
+
+{% block main %}
+    <form action="{{ url_for('index') }}" method="post">
+        <ul>
+            {% for stock in final %}
+                    <li> {{ final[stock] }} is </li>
+            {% endfor %}
+        </ul>
+    </form>
+{% endblock %}

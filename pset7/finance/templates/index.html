@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Home Page
+{% endblock %}
+
+{% block main %}
+        <TABLE WIDTH="100%">
+            <TR>
+                <TD> <B>  SYMBOL </B> </TD>
+                <TD> <B> NAME  </B> </TD>
+                <TD> <B> SHARES </B> </TD>
+                <TD> <B> PRICE </B> </TD>
+                <TD> <B> TOTAL </B>  </TD>
+            </TR>
+            {% for i in final["stocks"] %}
+                <TR> 
+                    <TD> {{ i }} </TD>
+                    <TD> {{ final["stocks"][i][0] }} </TD>
+                    <TD> {{ final["stocks"][i][1] }} </TD>
+                    <TD> {{ final["stocks"][i][2] }} </TD>
+                    <TD> {{ final["stocks"][i][3] }} </TD>
+                </TR>
+            {% endfor %}
+            <TR>
+                <TD> CASH </TD>
+                <TD></TD>
+                <TD></TD>
+                <TD></TD>
+                <TD> {{ final["balance"] }}</TD>
+            </TR>
+            <TR>
+                <TD></TD>
+                <TD></TD>
+                <TD></TD>
+                <TD></TD>
+                <TD> <B> {{ final["total_value"] }} </B> </TD>
+            </TR>
+        </TABLE>
+{% endblock %}

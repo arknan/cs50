@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block title %}
+     Transactions
+{% endblock %}
+
+{% block main %}
+        <TABLE WIDTH="100%">
+            <TR>
+                <TD> <B>  SYMBOL </B> </TD>
+                <TD> <B> NAME  </B> </TD>
+                <TD> <B> SHARES </B> </TD>
+                <TD> <B> PRICE </B> </TD>
+                <TD> <B> TOTAL </B>  </TD>
+                <TD> <B> TRANSACTED </B>  </TD>
+                <TD> <B> TRANSACTION TYPE </B>  </TD>
+            </TR>
+            {% for i in transactions %}
+                <TR> 
+                    <TD> {{ i["share_name"] }} </TD>
+                    <TD> {{ i["share_full_name"] }} </TD>
+                    <TD> {{ i["share_quantity"] }} </TD>
+                    <TD> {{ i["share_price"] }} </TD>
+                    <TD> {{ i["total_cost"] }} </TD>
+                    <TD> {{ i["time"] }} </TD>
+                    <TD> {{ i["type"] }} </TD>
+                </TR>
+            {% endfor %}
+        </TABLE>
+{% endblock %}
